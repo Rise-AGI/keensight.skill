@@ -1,6 +1,7 @@
 % magnus/skills/keensight/templates/main.tex
 % 锋识骨架。把〈…〉占位换成真实内容；按依赖有向图的拓扑序逐章铺开。
-% 每个节点先「规格」（精确陈述「是什么」+ 指挥 AI 所需接口），后「推演」（证明 / 推导 / 实现）。
+% 每个节点先「规格」（精确陈述「是什么」+ 指挥 AI 所需接口），后「推演」（为什么 / 怎么来）。
+% 文史哲：spec 放论点、deriv 放论证 / 史料 / 文本细读，无需 theorem 环境；STEM 才用下面的定理-证明。
 % 长锋识建议把每章拆进 chapters/ 用 \include 组织，并用 \part 分组。
 \documentclass{keensight}
 
@@ -35,7 +36,7 @@
 \end{convention}
 
 \begin{convention}[到达判据]\label{conv:goal}
-〈把「抵达前沿」锚成可检验判据：能读懂某篇标志性论文 / 能复现某个关键结果。这是有向图的汇点。〉
+〈把「抵达前沿」锚成按域可检验判据：读懂某论文 / 复现某结果（STEM），读懂某原典 / 进入某争论并自持立场（文史哲），或项目书自洽可实现（未来知识）。这是有向图的汇点。〉
 \end{convention}
 
 \begin{definition}\label{def:object}

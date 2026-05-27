@@ -64,7 +64,7 @@
 \crefname{chapter}{第}{第}
 \creflabelformat{chapter}{#2#1#3 章}
 
-% ---- 双轨：规格（顶层 spec，读者只读这一轨即可指挥 AI）/ 推演（底层 technical，起疑时下潜）----
+% ---- 双轨：规格（顶层，读者只读这一轨即可指挥 AI）/ 推演（底层细节，起疑时下潜）----
 \newtcolorbox{spec}{
   enhanced, breakable,
   colback = NavyBlue!5, colframe = NavyBlue!60!black, boxrule = 0.5pt,
