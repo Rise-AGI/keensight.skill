@@ -1,6 +1,7 @@
 % magnus/skills/keensight/templates/main.tex
-% 锋识骨架。把 〈…〉 占位换成真实内容；按依赖有向图的拓扑序逐章铺开。
+% 锋识骨架。把〈…〉占位换成真实内容；按依赖有向图的拓扑序逐章铺开。
 % 每个节点先「规格」（精确陈述「是什么」+ 指挥 AI 所需接口），后「推演」（证明 / 推导 / 实现）。
+% 长锋识建议把每章拆进 chapters/ 用 \include 组织，并用 \part 分组。
 \documentclass{keensight}
 
 \zhtitle{〈锋识标题：一条知识脉络〉}
@@ -12,12 +13,29 @@
 \makecover
 \tableofcontents
 
-\chapter{起点：原语与约定}
+% ---- 卷首依赖图：一眼看清「前置 → 主干 → 前沿」----
+\chapter*{脉络依赖图}
+\addcontentsline{toc}{chapter}{脉络依赖图}
+\begin{center}
+\begin{tikzpicture}[every node/.style = {draw, rounded corners, inner sep = 4pt}]
+  \node (a) at (0, 0) {〈起点原语〉};
+  \node (b) at (4, 0) {〈主干节点〉};
+  \node (c) at (8, 0) {〈前沿终点〉};
+  \draw[->] (a) -- (b);
+  \draw[->] (b) -- (c);
+\end{tikzpicture}
+\end{center}
+
+\chapter{起点：原语、约定与到达判据}
 
 先把后文一切符号、对象、记号钉死，确保有向图无前向悬空引用。
 
 \begin{convention}\label{conv:base}
-〈写明本锋识默认的读者起点与全局记号；这是有向图的根节点。〉
+〈写明本锋识默认的读者起点与全局记号（notation registry 的锚）；这是有向图的根节点。〉
+\end{convention}
+
+\begin{convention}[到达判据]\label{conv:goal}
+〈把「抵达前沿」锚成可检验判据：能读懂某篇标志性论文 / 能复现某个关键结果。这是有向图的汇点。〉
 \end{convention}
 
 \begin{definition}\label{def:object}
@@ -31,19 +49,29 @@
 读者只读「规格」轨即可获得指挥 AI 所需的全部信息。
 
 \begin{theorem}\label{thm:demo}
-设 $f\colon X \to Y$ 满足 〈前提〉，则 〈结论〉。
+设 $f\colon X \to Y$ 满足〈前提〉，则〈结论〉。
 \end{theorem}
 \end{spec}
 
 \begin{deriv}
 本块回答「为什么 / 怎么来」：完整、严谨、不跳步。起疑或好奇时下潜至此。
 
+先给直觉图景（dual-coding）：〈一句话物理 / 几何直觉〉。落笔硬推导前不妨先预判（predict-before-peek）：〈让读者先猜结论方向〉。
+
+\begin{keystep}
+〈主干上最吃重的一步。这正是 \cref{def:object} 的直接推论。〉
+\end{keystep}
+
+\begin{soul}
+〈整条推导的灵魂一步：最不显然、最见功力的那一下。〉
+\end{soul}
+
 \begin{proof}
 〈逐步推导；每条边都严谨架桥，绝不科普式一带而过。〉
 \end{proof}
 
 \begin{remark}
-〈可放一笔带过的旁支提示，但主干仍深度优先。〉
+〈可一笔带过的旁支提示，但主干仍深度优先。〉
 \end{remark}
 \end{deriv}
 
