@@ -1,0 +1,55 @@
+% magnus/skills/keensight/templates/main.tex
+% 锋识骨架。把 〈…〉 占位换成真实内容；按依赖有向图的拓扑序逐章铺开。
+% 每个节点先「规格」（精确陈述「是什么」+ 指挥 AI 所需接口），后「推演」（证明 / 推导 / 实现）。
+\documentclass{keensight}
+
+\zhtitle{〈锋识标题：一条知识脉络〉}
+\entitle{〈English subtitle〉}
+\edition{v0.1}
+\datemark{二〇二六年五月}
+
+\begin{document}
+\makecover
+\tableofcontents
+
+\chapter{起点：原语与约定}
+
+先把后文一切符号、对象、记号钉死，确保有向图无前向悬空引用。
+
+\begin{convention}\label{conv:base}
+〈写明本锋识默认的读者起点与全局记号；这是有向图的根节点。〉
+\end{convention}
+
+\begin{definition}\label{def:object}
+〈定义第一个原语对象。〉
+\end{definition}
+
+\chapter{一个节点的双轨示范}
+
+\begin{spec}
+本节回答「是什么」：给出 \cref{thm:demo} 的精确陈述与它在脉络中的接口——
+读者只读「规格」轨即可获得指挥 AI 所需的全部信息。
+
+\begin{theorem}\label{thm:demo}
+设 $f\colon X \to Y$ 满足 〈前提〉，则 〈结论〉。
+\end{theorem}
+\end{spec}
+
+\begin{deriv}
+本块回答「为什么 / 怎么来」：完整、严谨、不跳步。起疑或好奇时下潜至此。
+
+\begin{proof}
+〈逐步推导；每条边都严谨架桥，绝不科普式一带而过。〉
+\end{proof}
+
+\begin{remark}
+〈可放一笔带过的旁支提示，但主干仍深度优先。〉
+\end{remark}
+\end{deriv}
+
+\appendix
+\chapter{重机械下沉处}
+
+〈与主干推进无关、但完备性要求收录的繁重证明 / 长表 / 实现细节放这里。〉
+
+\end{document}
