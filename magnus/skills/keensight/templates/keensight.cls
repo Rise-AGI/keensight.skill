@@ -61,8 +61,21 @@
 \crefname{lemma}{引理}{引理}
 \crefname{proposition}{命题}{命题}
 \crefname{corollary}{推论}{推论}
+\crefname{equation}{式}{式}
+\Crefname{equation}{式}{式}
 \crefname{chapter}{第}{第}
 \creflabelformat{chapter}{#2#1#3 章}
+% cleveref 多目标连接词本地化：避免「and」「to」等英文功能词渗入中文正文。
+% cleveref 在 \begin{document} 才落定这些宏，故须在 \AtBeginDocument 内 \def 覆盖。
+\AtBeginDocument{%
+  \def\crefpairconjunction{、}%
+  \def\crefmiddleconjunction{、}%
+  \def\creflastconjunction{、}%
+  \def\crefpairgroupconjunction{、}%
+  \def\crefmiddlegroupconjunction{、}%
+  \def\creflastgroupconjunction{、}%
+  \def\crefrangeconjunction{至}%
+}
 
 % ---- 双轨：规格（顶层，读者只读这一轨即可指挥 AI）/ 推演（底层细节，起疑时下潜）----
 \newtcolorbox{spec}{
